@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroFinan Pro - Seu Financiamento Rural e Consórcio Agrícola Sem Burocracia e Com Aprovação em Até 48h</title>
+
+    <!-- Metatags para SEO avançado: Essenciais para a visibilidade no Google -->
+    <meta name="description" content="AgroFinan Pro: Especialistas em financiamento rural, consórcio de máquinas agrícolas, energia solar e irrigação. Aprovação em até 48h, parcelas casadas com a safra, taxas a partir de 0,5% ao mês. Soluções completas para Plano Safra, Moderfrota e Pronaf. Simule grátis e impulsione seu agronegócio!">
+    <meta name="keywords" content="crédito rural, financiamento agrícola, consórcio máquinas agrícolas, máquinas agrícolas, tratores John Deere, New Holland, Case IH, Massey Ferguson, energia solar rural, irrigação agrícola, crédito agro, plano safra, moderfrota, pronaf, financiamento sem burocracia, aprovação rápida, parcelas casadas com a safra, taxas competitivas, produtor rural, fazendeiro, agronegócio, investimento rural">
+    <meta name="author" content="AgroFinan Pro">
+    <meta property="og:title" content="AgroFinan Pro - Crédito Rural e Consórcio Agrícola">
+    <meta property="og:description" content="Seu Financiamento Rural e Consórcio Agrícola Sem Burocracia e Com Aprovação em Até 48h. Parcelas Fixas, Condições Especiais do Plano Safra e Pagamento Alinhado ao Seu Fluxo de Colheita.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1579607577587-8c8c2b2b2b2b?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:url" content="https://www.agrofinanpro.com.br"> <!-- Substitua pela URL real do seu site -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon: Ícone que aparece na aba do navegador -->
+    <link rel="icon" href="https://placehold.co/32x32/1E5631/FFFFFF?text=AF">
+
+    <!-- Google Fonts: Roboto e Montserrat para um visual profissional e legível -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN: Framework CSS para responsividade e estilo rápido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Estilos CSS embutidos: Personalizações e ajustes de design -->
+    <style>
+        /* Variáveis CSS para cores personalizadas, facilitando a manutenção */
+        :root {
+            --color-dark-green: #1E5631;
+            --color-light-green: #A9D18E;
+            --color-white: #FFFFFF;
+            --color-gray-light: #F7F7F7;
+            --color-red-error: #dc3545; /* Cor para mensagens de erro */
+        }
+        /* Classes Tailwind personalizadas para uso direto no HTML */
+        .bg-dark-green { background-color: var(--color-dark-green); }
+        .text-dark-green { color: var(--color-dark-green); }
+        .bg-light-green { background-color: var(--color-light-green); }
+        .text-light-green { color: var(--color-light-green); }
+        .bg-gray-light { background-color: var(--color-gray-light); }
+        .border-dark-green { border-color: var(--color-dark-green); }
+        .border-light-green { border-color: var(--color-light-green); }
+        .text-red-error { color: var(--color-red-error); }
+
+        /* Estilos globais para o corpo do site e fontes */
+        body {
+            font-family: 'Roboto', sans-serif; /* Fonte padrão para o corpo do texto */
+            color: #333; /* Cor de texto padrão para contraste */
+            scroll-behavior: smooth; /* Animação suave para rolagem de âncoras */
+        }
+        /* Fontes para títulos e subtítulos */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos para os botões flutuantes (WhatsApp e Telefone) */
+        .whatsapp-float, .call-float {
+            position: fixed; /* Fixa a posição na tela */
+            width: 60px; height: 60px; /* Tamanho do botão */
+            bottom: 40px; right: 40px; /* Posição na tela */
+            background-color: #25d366; /* Cor do WhatsApp */
+            color: #FFF; /* Cor do ícone */
+            border-radius: 50%; /* Torna o botão circular */
+            text-align: center; font-size: 30px;
+            box-shadow: 2px 2px 3px rgba(0,0,0,0.3); /* Sombra para destaque */
+            z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+            display: flex; align-items: center; justify-content: center; /* Centraliza o ícone */
+            transition: transform 0.3s ease-in-out; /* Animação ao passar o mouse */
+        }
+        /* Efeito de escala ao passar o mouse */
+        .whatsapp-float:hover, .call-float:hover { transform: scale(1.1); }
+        /* Tamanho dos ícones SVG dentro dos botões */
+        .whatsapp-float svg, .call-float svg { width: 30px; height: 30px; }
+        /* Posição e cor do botão de ligação */
+        .call-float { bottom: 110px; background-color: #007bff; }
+
+        /* Estilo para o cabeçalho fixo (sticky header) */
+        .header-fixed {
+            position: sticky; top: 0; z-index: 50; /* Fixa o cabeçalho no topo da tela */
+            background-color: rgba(255, 255, 255, 0.98); /* Fundo semi-transparente */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra para profundidade */
+        }
+
+        /* Estilos para os cards de solução (Financiamento, Consórcio, Energia Solar) */
+        .solution-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Animações */
+            border: 1px solid var(--color-light-green); /* Borda para destaque visual */
+        }
+        /* Efeito ao passar o mouse nos cards */
+        .solution-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        /* Estilos para a seção de Perguntas Frequentes (FAQ) - Acordeão */
+        .accordion-item {
+            border: 1px solid #e2e8f0; border-radius: 0.5rem; margin-bottom: 1rem; overflow: hidden;
+        }
+        .accordion-header {
+            cursor: pointer; padding: 1.25rem; display: flex; justify-content: space-between;
+            align-items: center; font-weight: 600; background-color: var(--color-gray-light);
+            color: var(--color-dark-green);
+        }
+        .accordion-content {
+            padding: 0 1.25rem; max-height: 0; overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Animação de expansão/retração */
+            background-color: var(--color-white); color: #4a5568;
+        }
+        /* Estado ativo do acordeão: mostra o conteúdo */
+        .accordion-item.active .accordion-content { max-height: 300px; padding-top: 1rem; padding-bottom: 1.25rem; }
+        /* Rotação do ícone de seta no cabeçalho do acordeão */
+        .accordion-header svg { transition: transform 0.3s ease-in-out; }
+        .accordion-item.active .accordion-header svg { transform: rotate(180deg); }
+
+        /* Estilos para o Modal de Sucesso/Erro do Formulário */
+        .modal {
+            display: none; position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%;
+            overflow: auto; background-color: rgba(0,0,0,0.6); display: flex; align-items: center;
+            justify-content: center; opacity: 0; transition: opacity 0.3s ease-in-out;
+        }
+        /* Mostra o modal com transição */
+        .modal.show { opacity: 1; display: flex; }
+        .modal-content {
+            background-color: #fefefe; margin: auto; padding: 30px; border: 1px solid #888;
+            width: 90%; max-width: 550px; border-radius: 12px; text-align: center;
+            position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translateY(-20px); transition: transform 0.3s ease-in-out;
+        }
+        /* Animação de entrada do conteúdo do modal */
+        .modal.show .modal-content { transform: translateY(0); }
+        /* Botão de fechar do modal */
+        .close-button {
+            color: #aaa; position: absolute; top: 15px; right: 25px;
+            font-size: 32px; font-weight: bold; cursor: pointer;
+        }
+        .close-button:hover, .close-button:focus { color: #333; text-decoration: none; cursor: pointer; }
+
+        /* Estilos para a Tabela de Simulação de Crédito */
+        .simulation-table th, .simulation-table td { padding: 0.75rem; border: 1px solid #e2e8f0; text-align: center; }
+        .simulation-table th { background-color: var(--color-dark-green); color: var(--color-white); font-weight: 600; }
+        .simulation-table tbody tr:nth-child(odd) { background-color: var(--color-gray-light); }
+        .simulation-table tbody tr:hover { background-color: var(--color-light-green); color: var(--color-dark-green); }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Botão flutuante do WhatsApp: Visível em todas as seções para contato rápido -->
+    <a href="https://wa.me/5511969522814?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20cr%C3%A9dito%20rural." class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <!-- Ícone SVG do WhatsApp -->
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+    </a>
+
+    <!-- Botão flutuante de ligação direta: Para chamadas rápidas -->
+    <a href="tel:+551133334444" class="call-float" aria-label="Ligue para nós">
+        <!-- Ícone SVG de telefone -->
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+    </a>
+
+    <!-- 1. HEADER (Topo): Cabeçalho fixo com logo e menu de navegação -->
+    <header id="inicio" class="header-fixed w-full py-4 md:py-6 px-4 md:px-8">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Logo da empresa -->
+            <div class="flex items-center mb-4 md:mb-0">
+                <img src="https://placehold.co/40x40/1E5631/FFFFFF?text=AF" alt="AgroFinan Pro Logo" class="w-10 h-10 rounded-full mr-3">
+                <span class="text-2xl font-bold text-dark-green">AgroFinan Pro</span>
+            </div>
+            <!-- Menu de Navegação para Desktop -->
+            <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                <a href="#inicio" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">Início</a>
+                <a href="#sobre-nos" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">Sobre Nós</a>
+                <a href="#solucoes" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">Soluções</a>
+                <a href="#simulador" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">Simulação</a>
+                <a href="#depoimentos" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">Depoimentos</a>
+                <a href="#faq" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">FAQ</a>
+                <a href="#contato" class="text-dark-green hover:text-light-green font-medium transition-colors duration-300">Contato</a>
+            </nav>
+            <!-- Botão de menu para Mobile (ícone de hambúrguer) -->
+            <button id="mobile-menu-button" class="md:hidden text-dark-green focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Menu Mobile (oculto por padrão, visível ao clicar no botão) -->
+        <nav id="mobile-menu" class="md:hidden bg-white py-4 px-4 hidden">
+            <a href="#inicio" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">Início</a>
+            <a href="#sobre-nos" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">Sobre Nós</a>
+            <a href="#solucoes" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">Soluções</a>
+            <a href="#simulador" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">Simulação</a>
+            <a href="#depoimentos" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">Depoimentos</a>
+            <a href="#faq" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">FAQ</a>
+            <a href="#contato" class="block py-2 text-dark-green hover:text-light-green font-medium transition-colors duration-300 border-b border-gray-200">Contato</a>
+        </nav>
+    </header>
+
+    <!-- HERO (Banner Principal): Primeira seção, com chamada forte para ação -->
+    <section class="relative bg-cover bg-center h-screen flex items-center justify-center text-white" style="background-image: url('https://images.unsplash.com/photo-1579607577587-8c8c2b2b2b2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <!-- Overlay escuro para melhorar o contraste do texto -->
+        <div class="absolute inset-0 bg-dark-green opacity-75"></div>
+        <div class="container mx-auto text-center z-10 p-4">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">Seu Financiamento Rural e Consórcio Agrícola Sem Burocracia e Com Aprovação em Até 48h</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light drop-shadow-md">Parcelas Fixas, Condições Especiais do Plano Safra e Pagamento Alinhado ao Seu Fluxo de Colheita.</p>
+            <!-- Botão de CTA principal, que leva ao simulador -->
+            <a href="#simulador" class="bg-light-green text-dark-green px-8 py-4 rounded-full text-lg md:text-xl font-bold hover:bg-white hover:text-dark-green transition-all duration-300 shadow-lg transform hover:scale-105">Simule Grátis Agora</a>
+            <p class="mt-4 text-sm md:text-base font-medium drop-shadow-md">Aprovação em até 48h | Sem Limite Bancário | Atendimento Personalizado</p>
+        </div>
+    </section>
+
+    <!-- 2. SOBRE NÓS: Detalhes sobre a empresa, transmitindo confiança e autoridade -->
+    <section id="sobre-nos" class="py-16 md:py-24 bg-gray-light">
+        <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <!-- Imagem de produtores rurais felizes -->
+                <img src="https://images.unsplash.com/photo-1629863479510-7b7b7b7b7b7b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtores rurais felizes e satisfeitos" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-6">Nossa História e Compromisso com o Agronegócio</h2>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    Com mais de <span class="font-bold text-dark-green">10 anos no mercado de crédito agrícola</span>, já viabilizamos mais de <span class="font-bold text-dark-green">R$50 milhões em investimentos no campo</span>, impulsionando a produtividade e o crescimento de milhares de produtores rurais. Nossa equipe de especialistas altamente qualificados utiliza <span class="font-bold text-dark-green">tecnologias avançadas para análise rápida e precisa</span>, garantindo aprovação ágil, taxas competitivas e soluções financeiras perfeitamente alinhadas ao fluxo de caixa e ao ciclo de colheita dos produtores. Temos um índice de <span class="font-bold text-dark-green">98% de satisfação</span>, refletindo nosso compromisso com a excelência e a segurança em cada operação.
+                </p>
+                <!-- Destaques numéricos para reforçar a credibilidade -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-dark-green">
+                    <div class="p-4 bg-white rounded-lg shadow-md text-center border border-light-green">
+                        <p class="text-4xl font-extrabold">+R$50M</p>
+                        <p class="text-sm">Crédito Liberado</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md text-center border border-light-green">
+                        <p class="text-4xl font-extrabold">98%</p>
+                        <p class="text-sm">Satisfação</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md text-center border border-light-green">
+                        <p class="text-4xl font-extrabold">48h</p>
+                        <p class="text-sm">Aprovação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOLUÇÕES: Detalhes sobre os produtos de crédito oferecidos -->
+    <section id="solucoes" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-12">Nossas Soluções Financeiras para o Campo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card: Financiamento de Máquinas Agrícolas -->
+                <div class="solution-card bg-gray-light p-6 rounded-xl shadow-lg">
+                    <div class="text-dark-green text-5xl mb-4">🚜</div> <!-- Ícone de trator -->
+                    <h3 class="text-2xl font-semibold text-dark-green mb-4">Financiamento de Máquinas Agrícolas</h3>
+                    <p class="text-gray-700 text-left mb-6 leading-relaxed">
+                        Adquira tratores, colheitadeiras, pulverizadores e outros equipamentos de ponta com as melhores condições do mercado. Oferecemos <span class="font-medium">parcelas fixas sem reajuste</span>, garantindo previsibilidade para seu orçamento. Trabalhamos com <span class="font-medium">taxas competitivas a partir de 0,5% ao mês</span> e condições especiais do <span class="font-medium">Plano Safra e Moderfrota</span>, sem limite de crédito bancário.
+                    </p>
+                    <ul class="text-gray-700 text-left mb-6 space-y-2 text-sm">
+                        <li>✅ Liberação rápida do capital</li>
+                        <li>✅ Sem burocracia excessiva</li>
+                        <li>✅ Flexibilidade nos prazos de pagamento</li>
+                        <li>✅ Ideal para renovar sua frota</li>
+                    </ul>
+                    <!-- Botão de CTA que leva ao simulador -->
+                    <a href="#simulador" class="bg-dark-green text-white px-7 py-3 rounded-full font-semibold hover:bg-light-green hover:text-dark-green transition-colors duration-300 shadow-md transform hover:scale-105">Simular Financiamento</a>
+                </div>
+
+                <!-- Card: Consórcio Agro Inteligente -->
+                <div class="solution-card bg-gray-light p-6 rounded-xl shadow-lg">
+                    <div class="text-dark-green text-5xl mb-4">🌱</div> <!-- Ícone de planta -->
+                    <h3 class="text-2xl font-semibold text-dark-green mb-4">Consórcio Agro Inteligente</h3>
+                    <p class="text-gray-700 text-left mb-6 leading-relaxed">
+                        Planeje a aquisição de seus bens agrícolas de forma econômica e sem juros. Nosso consórcio oferece <span class="font-medium">parcelas reduzidas</span> e a possibilidade de <span class="font-medium">lance facilitado</span> para antecipar sua contemplação. Pague apenas a taxa administrativa e invista no futuro da sua propriedade com segurança e flexibilidade.
+                    </p>
+                    <ul class="text-gray-700 text-left mb-6 space-y-2 text-sm">
+                        <li>✅ Sem juros, apenas taxa administrativa</li>
+                        <li>✅ Flexibilidade para adquirir bens de alto valor</li>
+                        <li>✅ Prazos estendidos para pagamento</li>
+                        <li>✅ Ótima opção para planejamento a longo prazo</li>
+                    </ul>
+                    <!-- Botão de CTA que leva ao simulador -->
+                    <a href="#simulador" class="bg-dark-green text-white px-7 py-3 rounded-full font-semibold hover:bg-light-green hover:text-dark-green transition-colors duration-300 shadow-md transform hover:scale-105">Simular Consórcio</a>
+                </div>
+
+                <!-- Card: Energia Solar e Irrigação Sustentável -->
+                <div class="solution-card bg-gray-light p-6 rounded-xl shadow-lg">
+                    <div class="text-dark-green text-5xl mb-4">⚡</div> <!-- Ícone de raio -->
+                    <h3 class="text-2xl font-semibold text-dark-green mb-4">Energia Solar e Irrigação Sustentável</h3>
+                    <p class="text-gray-700 text-left mb-6 leading-relaxed">
+                        Invista em sustentabilidade e reduza seus custos operacionais. Financiamos <span class="font-medium">projetos fotovoltaicos completos</span> para sua fazenda e <span class="font-medium">sistemas de irrigação inteligentes</span> que otimizam o uso da água. Tenha pagamentos alinhados à sua colheita e garanta mais eficiência e economia para sua produção.
+                    </p>
+                    <ul class="text-gray-700 text-left mb-6 space-y-2 text-sm">
+                        <li>✅ Redução significativa na conta de energia</li>
+                        <li>✅ Aumento da produtividade com irrigação eficiente</li>
+                        <li>✅ Pagamento flexível conforme sua safra</li>
+                        <li>✅ Contribuição para um agronegócio mais verde</li>
+                    </ul>
+                    <!-- Botão de CTA que leva ao simulador -->
+                    <a href="#simulador" class="bg-dark-green text-white px-7 py-3 rounded-full font-semibold hover:bg-light-green hover:text-dark-green transition-colors duration-300 shadow-md transform hover:scale-105">Simular Projeto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SIMULADOR INTERATIVO: Formulário para captação de leads -->
+    <section id="simulador" class="py-16 md:py-24 bg-light-green">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-12">Simule Grátis e Receba uma Proposta Personalizada</h2>
+            <p class="text-lg text-gray-800 mb-8 max-w-3xl mx-auto">Preencha o formulário abaixo e um de nossos especialistas entrará em contato em poucos minutos com a melhor solução para o seu agronegócio. <span class="font-semibold text-dark-green">Aprovação em até 48h!</span></p>
+            <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg max-w-2xl mx-auto">
+                <form id="simulation-form" class="grid grid-cols-1 gap-6">
+                    <div>
+                        <label for="nome" class="block text-left text-gray-700 font-semibold mb-2">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" class="w-full p-3 border border-gray-300 rounded-md focus:ring-dark-green focus:border-dark-green" placeholder="Seu nome" required>
+                    </div>
+                    <div>
+                        <label for="telefone" class="block text-left text-gray-700 font-semibold mb-2">Telefone WhatsApp</label>
+                        <input type="tel" id="telefone" name="telefone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-dark-green focus:border-dark-green" placeholder="(XX) XXXXX-XXXX" pattern="[0-9]{2}[0-9]{4,5}[0-9]{4}" title="Formato: (XX) XXXXX-XXXX ou (XX) XXXX-XXXX" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-left text-gray-700 font-semibold mb-2">E-mail</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-md focus:ring-dark-green focus:border-dark-green" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    <div>
+                        <label for="tipo_maquina" class="block text-left text-gray-700 font-semibold mb-2">Tipo da Máquina ou Projeto</label>
+                        <select id="tipo_maquina" name="tipo_maquina" class="w-full p-3 border border-gray-300 rounded-md focus:ring-dark-green focus:border-dark-green" required>
+                            <option value="">Selecione</option>
+                            <option value="Trator">Trator (John Deere, New Holland, Case IH, Massey Ferguson)</option>
+                            <option value="Colheitadeira">Colheitadeira</option>
+                            <option value="Pulverizador">Pulverizador</option>
+                            <option value="Sistema de Irrigação">Sistema de Irrigação</option>
+                            <option value="Energia Solar Fotovoltaica">Energia Solar Fotovoltaica</option>
+                            <option value="Outros Equipamentos / Projeto">Outros Equipamentos / Projeto</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="valor_aproximado" class="block text-left text-gray-700 font-semibold mb-2">Valor Aproximado (R$)</label>
+                        <input type="number" id="valor_aproximado" name="valor_aproximado" class="w-full p-3 border border-gray-300 rounded-md focus:ring-dark-green focus:border-dark-green" placeholder="Ex: 150000" min="100000" required>
+                    </div>
+                    <div>
+                        <label class="block text-left text-gray-700 font-semibold mb-2">Possui entrada?</label>
+                        <div class="flex space-x-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="possui_entrada" value="Sim" class="form-radio text-dark-green" required>
+                                <span class="ml-2 text-gray-700">Sim</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="possui_entrada" value="Não" class="form-radio text-dark-green">
+                                <span class="ml-2 text-gray-700">Não</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="observacoes" class="block text-left text-gray-700 font-semibold mb-2">Observações Adicionais</label>
+                        <textarea id="observacoes" name="observacoes" rows="4" class="w-full p-3 border border-gray-300 rounded-md focus:ring-dark-green focus:border-dark-green" placeholder="Descreva brevemente suas necessidades ou dúvidas específicas..."></textarea>
+                    </div>
+
+                    <button type="submit" class="bg-dark-green text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-white hover:text-dark-green transition-colors duration-300 shadow-lg transform hover:scale-105 mt-6">Solicitar Simulação Gratuita</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Sucesso/Erro: Usado para feedback do formulário -->
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="document.getElementById('feedback-modal').classList.remove('show');">&times;</span>
+            <h3 id="modal-title" class="text-2xl font-bold text-dark-green mb-4"></h3>
+            <p id="modal-message" class="text-lg text-gray-700"></p>
+            <p id="modal-whatsapp-redirect" class="text-sm text-gray-500 mt-4 hidden">Você será redirecionado para o WhatsApp para confirmar seus dados e agilizar o atendimento.</p>
+        </div>
+    </div>
+
+    <!-- SEÇÃO DE SIMULAÇÃO DE CRÉDITO AVANÇADA: Exemplo de cálculo de parcelas -->
+    <section id="simulacao-avancada" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-12">Exemplo de Simulação de Crédito Rural</h2>
+            <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+                Para que você tenha uma ideia clara de como funcionam nossos financiamentos, preparamos um exemplo detalhado.
+                Abaixo, você verá uma simulação de <span class="font-semibold text-dark-green">R$ 800.000,00</span> para aquisição de máquinas,
+                com prazo de <span class="font-semibold text-dark-green">72 parcelas</span> e uma taxa de juros de <span class="font-semibold text-dark-green">7% ao ano</span>.
+                Lembre-se que as condições podem variar conforme análise de crédito e o Plano Safra vigente.
+            </p>
+
+            <!-- Tabela de Amortização (apenas as 10 primeiras linhas) -->
+            <div class="overflow-x-auto bg-gray-light p-4 rounded-xl shadow-lg mb-8">
+                <table class="min-w-full divide-y divide-gray-200 simulation-table">
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>Saldo Devedor Inicial (R$)</th>
+                            <th>Juros (R$)</th>
+                            <th>Amortização (R$)</th>
+                            <th>Parcela (R$)</th>
+                            <th>Saldo Devedor Final (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="simulation-table-body" class="divide-y divide-gray-200">
+                        <!-- As linhas da tabela serão preenchidas via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="max-w-3xl mx-auto text-left text-gray-700">
+                <h3 class="text-2xl font-bold text-dark-green mb-4">Entenda as Condições do Seu Crédito:</h3>
+                <p class="mb-4">
+                    Nossas propostas de crédito rural são desenhadas para se adequar à realidade do produtor. A <span class="font-semibold">aprovação é ágil, em até 48 horas</span> após a entrega da documentação completa, e buscamos sempre as melhores taxas de juros, que <span class="font-semibold">iniciam a partir de 0,5% ao mês</span>. Trabalhamos com flexibilidade total para <span class="font-semibold">ajustar as parcelas ao seu fluxo de safra</span>, garantindo que o pagamento ocorra nos períodos de maior liquidez da sua produção.
+                </p>
+                <p class="mb-4">
+                    Com a AgroFinan Pro, você tem acesso a linhas de crédito sem o limite bancário tradicional, abrindo portas para investimentos maiores e mais estratégicos. Mesmo em casos de <span class="font-semibold">restrição bancária, realizamos uma análise interna detalhada</span> para buscar a melhor solução possível para você. Nosso objetivo é desburocratizar o acesso ao crédito e garantir que seu projeto agrícola se torne realidade.
+                </p>
+                <p class="font-semibold text-dark-green text-center mt-6">
+                    Não perca tempo! Solicite sua simulação gratuita e descubra o potencial de crescimento do seu agronegócio.
+                </p>
+                <a href="#simulador" class="block text-center bg-dark-green text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-light-green hover:text-dark-green transition-colors duration-300 shadow-lg transform hover:scale-105 mt-8 max-w-xs mx-auto">Simule Agora!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DEPOIMENTOS: Prova social com testemunhos de produtores -->
+    <section id="depoimentos" class="py-16 md:py-24 bg-gray-light">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-12">O Que Nossos Produtores Dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-light-green flex flex-col items-center text-center">
+                    <!-- Imagem real de produtor -->
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto do Produtor João Silva" class="w-24 h-24 rounded-full mb-4 object-cover border-2 border-dark-green">
+                    <p class="text-lg italic text-gray-700 mb-4 leading-relaxed">"A AgroFinan Pro superou minhas expectativas! Financiei minha colheitadeira em tempo recorde, com taxas que realmente se encaixam no meu orçamento. O atendimento é consultivo e a equipe é extremamente competente. Recomendo muito!"</p>
+                    <p class="font-semibold text-dark-green">- João Silva, Produtor Rural de Soja</p>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-light-green flex flex-col items-center text-center">
+                    <!-- Imagem real de produtora -->
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto da Produtora Maria Oliveira" class="w-24 h-24 rounded-full mb-4 object-cover border-2 border-dark-green">
+                    <p class="text-lg italic text-gray-700 mb-4 leading-relaxed">"Meu projeto fotovoltaico era um sonho antigo e a AgroFinan Pro o tornou realidade. O atendimento foi rápido, transparente e solucionaram todas as minhas dúvidas. As parcelas são justas e o suporte foi excelente do início ao fim. Muito satisfeita!"</p>
+                    <p class="font-semibold text-dark-green">- Maria Oliveira, Empresária Agrícola e Cafeicultora</p>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-light-green flex flex-col items-center text-center">
+                    <!-- Imagem real de produtor -->
+                    <img src="https://images.unsplash.com/photo-1560787349-f010f010f010?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto do Produtor Carlos Santos" class="w-24 h-24 rounded-full mb-4 object-cover border-2 border-dark-green">
+                    <p class="text-lg italic text-gray-700 mb-4 leading-relaxed">"Eu precisava de um consórcio com parcelas que acompanhassem o ciclo da minha safra, e a AgroFinan Pro ofereceu exatamente isso. A flexibilidade e o suporte foram cruciais. Sinto total segurança para planejar meus próximos investimentos com eles."</p>
+                    <p class="font-semibold text-dark-green">- Carlos Santos, Fazendeiro de Grãos</p>
+                </div>
+            </div>
+            <!-- Logos de Revistas/Sites Renomados (Placeholders para manter a estrutura) -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold text-gray-700 mb-6">Confiança em Destaque na Mídia:</h3>
+                <div class="flex flex-wrap justify-center items-center gap-8">
+                    <img src="https://placehold.co/150x50/E0E0E0/333333?text=Globo+Rural" alt="Logo Globo Rural" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                    <img src="https://placehold.co/150x50/E0E0E0/333333?text=AgroNews" alt="Logo AgroNews" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                    <img src="https://placehold.co/150x50/E0E0E0/333333?text=Sucesso+no+Campo" alt="Logo Sucesso no Campo" class="h-12 opacity-75 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ - Perguntas Frequentes: Seção de transparência com respostas detalhadas -->
+    <section id="faq" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-12">Perguntas Frequentes</h2>
+            <div class="max-w-3xl mx-auto text-left">
+                <!-- Item do Acordeão 1 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Quais documentos preciso para aprovação do crédito rural?
+                        <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Para a análise de crédito, geralmente solicitamos RG, CPF, comprovante de endereço atualizado, dados completos da propriedade rural (matrícula do imóvel ou contrato de arrendamento/parceria), e documentos de comprovação de renda e capacidade de pagamento. Em alguns casos, podem ser solicitados documentos adicionais para uma análise mais aprofundada.</p>
+                    </div>
+                </div>
+                <!-- Item do Acordeão 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        É possível financiar máquinas agrícolas ou projetos sem entrada?
+                        <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Sim, é possível. Após uma análise de crédito detalhada do seu perfil e do projeto, podemos viabilizar o financiamento com 100% do valor do bem, sem a necessidade de entrada. Nossa equipe trabalha para encontrar as melhores condições que se encaixem na sua realidade financeira.</p>
+                    </div>
+                </div>
+                <!-- Item do Acordeão 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Quanto tempo demora o processo de análise e aprovação do crédito?
+                        <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Nosso processo é otimizado para agilidade. Após a entrega de toda a documentação necessária, a análise e aprovação de crédito geralmente levam entre 24 a 72 horas. Nosso objetivo é garantir que você tenha acesso ao capital de forma rápida e eficiente.</p>
+                    </div>
+                </div>
+                <!-- Item do Acordeão 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        As parcelas do financiamento podem ser ajustadas ao meu fluxo de safra?
+                        <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Absolutamente! Temos total flexibilidade para estruturar o cronograma de pagamentos de forma que as parcelas se ajustem perfeitamente ao seu ciclo de produção e ao fluxo de caixa da sua safra. Isso proporciona maior tranquilidade e segurança financeira para o produtor rural.</p>
+                    </div>
+                </div>
+                <!-- Item do Acordeão 5 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Qual a taxa média de juros para financiamento de máquinas agrícolas?
+                        <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Nossas taxas de juros para financiamento são altamente competitivas e iniciam a partir de 0,5% ao mês, dependendo do perfil do cliente, do tipo de operação e das condições do mercado. Oferecemos condições especiais atreladas ao Plano Safra e Moderfrota.</p>
+                    </div>
+                </div>
+                <!-- Item do Acordeão 6 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        Tenho restrição bancária, consigo aprovação para crédito rural?
+                        <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>A aprovação com restrição bancária depende de uma análise interna detalhada. Não descartamos casos com restrições e buscamos soluções personalizadas. Recomendamos que entre em contato conosco para uma avaliação minuciosa do seu perfil e das possibilidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CONTATO DIRETO E MAPA: Informações de contato e localização -->
+    <section id="contato" class="py-16 md:py-24 bg-light-green">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-green mb-12">Fale Conosco e Impulsione Seu Agronegócio</h2>
+            <p class="text-lg text-gray-800 mb-8 max-w-3xl mx-auto">Nossa equipe de consultores especializados está pronta para oferecer um atendimento personalizado e encontrar a solução financeira ideal para suas necessidades no campo.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Informações de Contato -->
+                <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg text-left">
+                    <h3 class="text-2xl font-bold text-dark-green mb-6">Informações de Contato</h3>
+                    <p class="text-gray-700 text-lg mb-6">Entre em contato através dos nossos canais:</p>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-dark-green mb-3">Telefones:</h4>
+                        <p class="text-gray-700 text-lg flex items-center mb-2">
+                            <a href="tel:+551133334444" class="flex items-center hover:text-dark-green transition-colors duration-300">
+                                <svg class="w-7 h-7 mr-3 text-dark-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                (11) 3333-4444 <span class="text-sm ml-2">(Fixo)</span>
+                            </a>
+                        </p>
+                        <p class="text-gray-700 text-lg flex items-center">
+                            <a href="https://wa.me/5511969522814?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20cr%C3%A9dito%20rural." target="_blank" class="flex items-center hover:text-dark-green transition-colors duration-300">
+                                <svg class="w-7 h-7 mr-3 text-dark-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path></svg>
+                                (11) 96952-2814 <span class="text-sm ml-2">(WhatsApp)</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-semibold text-dark-green mb-3">E-mail:</h4>
+                        <p class="text-gray-700 text-lg flex items-center">
+                            <a href="mailto:contato@agrofinanpro.com.br" class="flex items-center hover:text-dark-green transition-colors duration-300">
+                                <svg class="w-7 h-7 mr-3 text-dark-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                contato@agrofinanpro.com.br
+                            </a>
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-dark-green mb-3">Nosso Endereço:</h4>
+                        <p class="text-gray-700 text-lg">
+                            Avenida Brigadeiro Faria Lima, 2012 - Jardim Paulistano<br>
+                            São Paulo, SP - CEP 01451-905<br>
+                            Brasil
+                        </p>
+                    </div>
+                </div>
+                <!-- Mapa Google Maps Incorporado -->
+                <div class="bg-white p-2 rounded-xl shadow-lg h-80 md:h-[450px] w-full">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.48789504825!2d-46.6354639844783!3d-23.5505199846849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59a6d09d9d0d%3A0x6b4f7b4f7b4f7b4f!2sAv.%20Brig.%20Faria%20Lima%2C%202012%20-%20Jardim%20Paulistano%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001451-905!5e0!3m2!1spt-BR!2sbr!4v1678912345678!5m2!1spt-BR!2sbr"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="rounded-lg"
+                        title="Localização da AgroFinan Pro no Google Maps"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé: Informações de copyright e compromisso -->
+    <footer class="bg-dark-green text-white py-8 text-center">
+        <div class="container mx-auto px-4 md:px-8">
+            <p>&copy; 2025 AgroFinan Pro. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm">Compromisso total com o desenvolvimento e sucesso do produtor rural brasileiro.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript embutido: Lógica de interatividade do site -->
+    <script>
+        // JavaScript para o menu mobile: Abre e fecha o menu de navegação em telas pequenas
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden'); // Alterna a visibilidade do menu
+        });
+
+        // JavaScript para rolagem suave do menu: Anima a rolagem para as seções ao clicar nos links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Previne o comportamento padrão do link
+
+                // Rola para a seção correspondente
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+
+                // Esconde o menu mobile após clicar em um item (se estiver aberto)
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // JavaScript para o acordeão FAQ: Expande e retrai as respostas das perguntas frequentes
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const item = this.parentNode;
+                item.classList.toggle('active'); // Alterna a classe 'active' para controlar a visibilidade
+            });
+        });
+
+        // JavaScript para o formulário de simulação: Lida com o envio do formulário e validações
+        document.getElementById('simulation-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Previne o envio padrão do formulário
+
+            const form = event.target;
+            const nome = form.nome.value;
+            const telefone = form.telefone.value;
+            const email = form.email.value;
+            const tipoMaquina = form.tipo_maquina.value;
+            const valorAproximado = parseFloat(form.valor_aproximado.value); // Pega o valor como número
+            const possuiEntrada = form.possui_entrada.value;
+            const observacoes = form.observacoes.value;
+
+            // Elementos do modal de feedback
+            const feedbackModal = document.getElementById('feedback-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+            const modalWhatsappRedirect = document.getElementById('modal-whatsapp-redirect');
+
+            // Validação dos campos obrigatórios do formulário
+            if (!nome || !telefone || !email || !tipoMaquina || isNaN(valorAproximado) || valorAproximado < 100000 || !possuiEntrada) {
+                // Configura o modal para exibir uma mensagem de erro
+                modalTitle.textContent = "Erro no Preenchimento!";
+                modalTitle.classList.remove('text-dark-green');
+                modalTitle.classList.add('text-red-error');
+                modalMessage.textContent = "Por favor, preencha todos os campos obrigatórios corretamente. O valor aproximado deve ser no mínimo R$ 100.000.";
+                modalWhatsappRedirect.classList.add('hidden'); // Esconde a mensagem de redirecionamento
+                feedbackModal.classList.add('show'); // Exibe o modal
+                return; // Interrompe a execução da função
+            }
+
+            // Formatação do telefone para o link do WhatsApp (remove caracteres não numéricos)
+            const telefoneNumeros = telefone.replace(/\D/g, '');
+
+            // Formata o valor aproximado para exibição na mensagem
+            const valorFormatado = valorAproximado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+            // Monta a mensagem para o WhatsApp com os dados preenchidos
+            const whatsappMessage = `Olá, AgroFinan Pro! Gostaria de uma simulação de crédito rural com os seguintes dados:%0A%0A` +
+                                    `Nome: ${nome}%0A` +
+                                    `Telefone: ${telefone}%0A` +
+                                    `E-mail: ${email}%0A` +
+                                    `Tipo de Máquina/Projeto: ${tipoMaquina}%0A` +
+                                    `Valor Aproximado: ${valorFormatado}%0A` +
+                                    `Possui Entrada: ${possuiEntrada}%0A` +
+                                    `Observações: ${observacoes || 'Nenhuma observação adicional.'}%0A%0A` +
+                                    `Aguardando seu contato para dar andamento!`;
+
+            // URL do WhatsApp API com o número e a mensagem pré-preenchida
+            const whatsappUrl = `https://wa.me/5511969522814?text=${encodeURIComponent(whatsappMessage)}`; // Usar encodeURIComponent para garantir que a mensagem seja formatada corretamente na URL
+
+            // Configura o modal para exibir uma mensagem de sucesso
+            modalTitle.textContent = "Simulação Solicitada com Sucesso!";
+            modalTitle.classList.remove('text-red-error');
+            modalTitle.classList.add('text-dark-green');
+            modalMessage.textContent = "Obrigado! Nosso especialista entrará em contato em poucos minutos para dar andamento à sua solicitação.";
+            modalWhatsappRedirect.classList.remove('hidden'); // Mostra a mensagem de redirecionamento
+            feedbackModal.classList.add('show'); // Exibe o modal
+
+            // Redireciona para o WhatsApp após um pequeno atraso para o usuário ler a mensagem de sucesso
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank'); // Abre o WhatsApp em uma nova aba
+                form.reset(); // Limpa o formulário após o envio
+                feedbackModal.classList.remove('show'); // Esconde o modal após o redirecionamento
+            }, 3000); // Atraso de 3 segundos
+        });
+
+        // Event listener para fechar o modal ao clicar no botão 'x'
+        document.querySelector('#feedback-modal .close-button').addEventListener('click', function() {
+            document.getElementById('feedback-modal').classList.remove('show');
+        });
+
+        // Event listener para fechar o modal ao clicar fora do conteúdo do modal
+        window.addEventListener('click', function(event) {
+            const feedbackModal = document.getElementById('feedback-modal');
+            if (event.target === feedbackModal) {
+                feedbackModal.classList.remove('show');
+            }
+        });
+
+        // Função para calcular e popular a tabela de simulação de crédito (Sistema Price)
+        function calculateAndPopulateSimulationTable() {
+            const principal = 800000; // Valor principal do financiamento
+            const annualInterestRate = 0.07; // Taxa de juros anual (7%)
+            const numberOfPayments = 72; // Número total de parcelas
+            const rowsToDisplay = 10; // Limita a exibição a apenas 10 linhas na tabela
+
+            const monthlyInterestRate = annualInterestRate / 12; // Converte a taxa anual para mensal
+
+            // Cálculo da parcela fixa utilizando a fórmula do Sistema Price
+            const installment = principal * (monthlyInterestRate / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments)));
+
+            let remainingBalance = principal; // Saldo devedor inicial
+            const tableBody = document.getElementById('simulation-table-body');
+            tableBody.innerHTML = ''; // Limpa qualquer conteúdo anterior da tabela
+
+            // Loop para popular as linhas da tabela de simulação
+            for (let i = 1; i <= rowsToDisplay; i++) {
+                const interestPayment = remainingBalance * monthlyInterestRate; // Cálculo dos juros do mês
+                const amortization = installment - interestPayment; // Cálculo da amortização (principal pago)
+                remainingBalance -= amortization; // Atualiza o saldo devedor
+
+                // Garante que o saldo final não seja negativo devido a pequenos arredondamentos
+                if (remainingBalance < 0) {
+                    remainingBalance = 0;
+                }
+
+                // Insere uma nova linha na tabela
+                const row = tableBody.insertRow();
+                // Adiciona as células com os dados formatados
+                row.insertCell().textContent = i; // Mês
+                row.insertCell().textContent = (principal - (installment * (i - 1))).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // Saldo Devedor Inicial (aproximado para a linha atual)
+                row.insertCell().textContent = interestPayment.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // Juros
+                row.insertCell().textContent = amortization.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // Amortização
+                row.insertCell().textContent = installment.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // Parcela
+                row.insertCell().textContent = remainingBalance.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); // Saldo Devedor Final
+            }
+        }
+
+        // Chama a função para popular a tabela quando a página for totalmente carregada
+        window.onload = calculateAndPopulateSimulationTable;
+    </script>
+</body>
+</html>

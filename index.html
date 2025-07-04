@@ -39,6 +39,7 @@
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
                 <li><a href="#solucoes" class="nav-link">Soluções</a></li>
                 <li><a href="#simulacao" class="nav-link">Simulação</a></li>
+                <li><a href="#maquinas-populares" class="nav-link">Máquinas Populares</a></li> <!-- Novo link para a seção de máquinas -->
                 <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#contato" class="nav-link">Contato</a></li>
             </ul>
@@ -1110,6 +1111,233 @@
         });
     </script>
     <!-- FIM DO COMPONENTE: Formulário de Simulação -->
+
+    <!--
+        ****************************************************************************************************
+        INÍCIO DO COMPONENTE: Painel de Máquinas Populares
+        Esta nova seção exibe um painel clicável que revela uma lista de máquinas agrícolas populares.
+        ****************************************************************************************************
+    -->
+    <section id="maquinas-populares">
+        <!-- HTML do Painel de Máquinas Populares -->
+        <div class="container">
+            <h2>Explore Máquinas Populares</h2>
+            <p>Descubra as máquinas agrícolas mais procuradas no mercado e inspire-se para o seu próximo investimento.</p>
+
+            <div class="machine-panel-toggle" id="toggleMachinePanel">
+                Clique para ver opções de Máquinas
+                <span class="toggle-icon">+</span>
+            </div>
+
+            <div class="machine-options-content" id="machineOptionsContent">
+                <div class="machine-list">
+                    <div class="machine-item">
+                        <h3>Tratores John Deere</h3>
+                        <p>Modelos como 5078E, 6100J, 8R 340. Confiabilidade e tecnologia para todas as culturas.</p>
+                        <img src="https://placehold.co/150x100/A9D18E/1E5631?text=Trator+JD" alt="Image of Trator John Deere" class="machine-img">
+                    </div>
+                    <div class="machine-item">
+                        <h3>Colheitadeiras Case IH</h3>
+                        <p>Axial-Flow 7230, 8250. Alta capacidade e eficiência na colheita de grãos.</p>
+                        <img src="https://placehold.co/150x100/A9D18E/1E5631?text=Colheitadeira+Case" alt="Image of Colheitadeira Case IH" class="machine-img">
+                    </div>
+                    <div class="machine-item">
+                        <h3>Pulverizadores New Holland</h3>
+                        <p>Defensor 3500, Guardian 450. Precisão na aplicação de defensivos para lavouras saudáveis.</p>
+                        <img src="https://placehold.co/150x100/A9D18E/1E5631?text=Pulverizador+NH" alt="Image of Pulverizador New Holland" class="machine-img">
+                    </div>
+                    <div class="machine-item">
+                        <h3>Plantadeiras Massey Ferguson</h3>
+                        <p>Momentum, Série MF 700. Plantio uniforme e eficiente para máxima produtividade.</p>
+                        <img src="https://placehold.co/150x100/A9D18E/1E5631?text=Plantadeira+MF" alt="Image of Plantadeira Massey Ferguson" class="machine-img">
+                    </div>
+                    <div class="machine-item">
+                        <h3>Sistemas de Irrigação Valley</h3>
+                        <p>Pivôs centrais e sistemas de gotejamento. Otimize o uso da água e aumente a produção.</p>
+                        <img src="https://placehold.co/150x100/A9D18E/1E5631?text=Irrigacao+Valley" alt="Image of Sistema de Irrigação Valley" class="machine-img">
+                    </div>
+                    <div class="machine-item">
+                        <h3>Painéis Solares Canadian Solar</h3>
+                        <p>Tecnologia fotovoltaica para reduzir custos de energia na sua propriedade rural.</p>
+                        <img src="https://placehold.co/150x100/A9D18E/1E5631?text=Painel+Solar" alt="Image of Painel Solar Canadian Solar" class="machine-img">
+                    </div>
+                </div>
+                <!-- Nova frase adicionada aqui -->
+                <p class="more-options-text">Essas são apenas algumas sugestões! Temos acesso a uma vasta gama de opções e marcas para atender às suas necessidades específicas. Não se limite a estas escolhas, entre em contato para explorar todas as possibilidades conosco!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSS exclusivo do Painel de Máquinas Populares -->
+    <style>
+        /* Estilos para a seção de Máquinas Populares */
+        #maquinas-populares {
+            padding: 80px 20px;
+            background-color: white; /* Altere a cor de fundo se desejar */
+            text-align: center;
+        }
+
+        #maquinas-populares .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        #maquinas-populares h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            color: #1E5631;
+            margin-bottom: 20px;
+        }
+
+        #maquinas-populares p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* Estilos para o painel clicável (toggle) */
+        .machine-panel-toggle {
+            background-color: #A9D18E; /* Cor de fundo do painel. Altere para sua cor preferida. */
+            color: #1E5631; /* Cor do texto. Altere para white ou outra cor. */
+            padding: 15px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .machine-panel-toggle:hover {
+            background-color: #1E5631; /* Cor de fundo ao passar o mouse. */
+            color: white; /* Cor do texto ao passar o mouse. */
+            transform: translateY(-3px);
+        }
+
+        /* Estilo para o ícone do painel */
+        .machine-panel-toggle .toggle-icon {
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotação do ícone quando o painel está aberto */
+        .machine-panel-toggle.active .toggle-icon {
+            transform: rotate(45deg); /* Transforma o '+' em 'x' */
+        }
+
+        /* Estilos para o conteúdo das opções de máquinas (escondido por padrão) */
+        .machine-options-content {
+            max-height: 0; /* Escondido por padrão */
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+            background-color: #f9f9f9; /* Cor de fundo do conteúdo. */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 0 20px; /* Padding inicial zero */
+        }
+
+        .machine-options-content.open {
+            max-height: 1000px; /* Altura máxima para exibir o conteúdo (ajuste conforme necessário) */
+            padding: 20px; /* Adiciona padding quando aberto */
+        }
+
+        /* Estilos para a lista de máquinas */
+        .machine-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Layout responsivo em grid */
+            gap: 25px; /* Espaçamento entre os itens */
+            padding-top: 10px; /* Espaçamento superior da lista */
+        }
+
+        /* Estilos para cada item de máquina */
+        .machine-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza o conteúdo do item */
+        }
+
+        .machine-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            color: #1E5631;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .machine-item p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95em;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
+            text-align: center;
+        }
+
+        .machine-item .machine-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 15px; /* Espaçamento acima da imagem */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para o texto de "Mais opções" */
+        .more-options-text {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: #1E5631; /* Cor do texto. Altere para sua cor preferida. */
+            margin-top: 30px; /* Espaçamento acima do texto */
+            padding: 10px;
+            background-color: #e0f7fa; /* Fundo leve para destaque */
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Media Queries para responsividade do painel de máquinas */
+        @media (max-width: 768px) {
+            .machine-panel-toggle {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+            .machine-list {
+                grid-template-columns: 1fr; /* Uma coluna em telas menores */
+            }
+        }
+    </style>
+
+    <!-- JavaScript exclusivo do Painel de Máquinas Populares -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('toggleMachinePanel');
+            const machineContent = document.getElementById('machineOptionsContent');
+
+            toggleButton.addEventListener('click', function() {
+                // Alterna a classe 'active' no botão para mudar o ícone
+                this.classList.toggle('active');
+                // Alterna a classe 'open' no conteúdo para exibir/esconder
+                machineContent.classList.toggle('open');
+
+                // Ajusta a altura máxima para a transição suave
+                if (machineContent.classList.contains('open')) {
+                    machineContent.style.maxHeight = machineContent.scrollHeight + 'px';
+                } else {
+                    machineContent.style.maxHeight = '0';
+                }
+            });
+        });
+    </script>
+    <!-- FIM DO COMPONENTE: Painel de Máquinas Populares -->
 
 
     <!--

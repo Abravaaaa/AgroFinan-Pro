@@ -8,6 +8,7 @@
         Este é o cabeçalho global da página.
         Aqui são carregadas as fontes do Google Fonts para uso em todo o site.
         As meta tags essenciais para responsividade e codificação de caracteres também estão aqui.
+        O viewport meta tag é crucial para a adaptabilidade em dispositivos móveis.
     -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -17,6 +18,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Cabeçalho Fixo com Menu de Navegação
         Este cabeçalho permanece fixo no topo da página, permitindo a navegação suave entre as seções.
+        Adaptado para ser totalmente responsivo em dispositivos móveis.
         ****************************************************************************************************
     -->
     <header id="mainHeader">
@@ -26,6 +28,12 @@
                 <!-- Altere o texto do logo aqui -->
                 <a href="#hero" class="nav-link">AGROCRÉDITO</a>
             </div>
+            <!-- Adicionado um botão para o menu hambúrguer em telas pequenas -->
+            <button class="hamburger-menu" aria-label="Abrir menu de navegação">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#hero" class="nav-link">Início</a></li>
                 <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -61,6 +69,7 @@
             max-width: 1200px; /* Largura máxima do conteúdo da navegação. */
             margin: 0 auto; /* Centraliza a navegação na página. */
             padding: 0 20px; /* Espaçamento lateral interno. */
+            position: relative; /* Necessário para posicionar o menu hambúrguer */
         }
 
         /* Estilos para o logo */
@@ -98,30 +107,95 @@
             color: #A9D18E; /* Cor dos links ao passar o mouse. Altere para sua cor preferida. */
         }
 
+        /* Estilos para o botão do menu hambúrguer */
+        .hamburger-menu {
+            display: none; /* Escondido por padrão em telas maiores */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001; /* Garante que o botão esteja acima do menu quando aberto */
+        }
+
+        .hamburger-menu .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
         /* Media Queries para responsividade do cabeçalho */
         @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block; /* Exibe o botão do menu hambúrguer em telas menores */
+            }
+
             #mainNav {
-                flex-direction: column; /* Empilha logo e links em telas menores. */
-                align-items: flex-start; /* Alinha itens à esquerda. */
+                flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+                justify-content: space-between; /* Mantém logo e hambúrguer separados */
             }
 
             .nav-links {
-                flex-direction: column; /* Empilha os links verticalmente. */
-                width: 100%; /* Ocupa a largura total. */
-                margin-top: 15px; /* Margem superior para separar do logo. */
+                flex-direction: column; /* Empilha os links verticalmente */
+                width: 100%; /* Ocupa a largura total */
+                background-color: #1E5631; /* Cor de fundo do menu mobile */
+                position: absolute; /* Posiciona o menu abaixo do cabeçalho */
+                top: 100%; /* Inicia abaixo do cabeçalho */
+                left: 0;
+                transform: translateX(-100%); /* Esconde o menu fora da tela */
+                transition: transform 0.3s ease-in-out; /* Transição suave para abrir/fechar */
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                transform: translateX(0); /* Move o menu para a tela */
             }
 
             .nav-links li {
-                margin: 10px 0; /* Espaçamento vertical entre os links. */
+                margin: 10px 20px; /* Espaçamento vertical e lateral para links do menu mobile */
+            }
+
+            .nav-link {
+                display: block; /* Garante que o link ocupe a largura total do item de lista */
+            }
+
+            /* Animação do ícone hambúrguer para 'X' */
+            .hamburger-menu.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger-menu.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger-menu.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
             }
         }
     </style>
 
-    <!-- JavaScript exclusivo deste cabeçalho (para rolagem suave) -->
+    <!-- JavaScript exclusivo deste cabeçalho (para rolagem suave e menu hambúrguer) -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Seleciona todos os links de navegação que apontam para IDs na mesma página
             const navLinks = document.querySelectorAll('#mainNav .nav-link');
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const mobileNavLinks = document.querySelector('.nav-links');
+
+            // Função para fechar o menu mobile
+            function closeMobileMenu() {
+                mobileNavLinks.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+
+            // Evento para abrir/fechar o menu hambúrguer
+            hamburgerMenu.addEventListener('click', function() {
+                mobileNavLinks.classList.toggle('active');
+                this.classList.toggle('active');
+            });
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -138,9 +212,17 @@
                             targetElement.scrollIntoView({
                                 behavior: 'smooth' // Habilita a rolagem suave
                             });
+                            closeMobileMenu(); // Fecha o menu mobile após clicar em um link
                         }
                     }
                 });
+            });
+
+            // Fecha o menu mobile se o usuário clicar fora dele
+            document.addEventListener('click', function(e) {
+                if (!mainNav.contains(e.target) && mobileNavLinks.classList.contains('active')) {
+                    closeMobileMenu();
+                }
             });
         });
     </script>
@@ -151,6 +233,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Banner Hero
         Esta é a primeira seção visível do site, com uma imagem de fundo e uma chamada para ação.
+        Totalmente responsivo para se adaptar a diferentes tamanhos de tela.
         ****************************************************************************************************
     -->
     <section id="hero">
@@ -240,6 +323,16 @@
                 font-size: 1em; /* Reduz o tamanho da fonte do botão. */
             }
         }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.8em; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas. */
+            }
+
+            .hero-content p {
+                font-size: 0.9em; /* Reduz ainda mais o tamanho da fonte. */
+            }
+        }
     </style>
     <!-- Não há JavaScript complexo para esta seção, apenas o clique do botão que já está no HTML -->
     <!-- FIM DO COMPONENTE: Banner Hero -->
@@ -249,6 +342,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Sobre Nós
         Esta seção apresenta informações institucionais e indicadores de sucesso.
+        Totalmente responsivo.
         ****************************************************************************************************
     -->
     <section id="sobre">
@@ -368,6 +462,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Soluções
         Esta seção apresenta os principais serviços oferecidos em formato de cards.
+        Totalmente responsivo.
         ****************************************************************************************************
     -->
     <section id="solucoes">
@@ -533,6 +628,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Formulário de Simulação
         Esta seção contém um formulário para o usuário simular o crédito e enviar os dados via WhatsApp.
+        Totalmente responsivo.
         ****************************************************************************************************
     -->
     <section id="simulacao">
@@ -694,6 +790,7 @@
             display: flex; /* Alinha os rádio buttons horizontalmente. */
             gap: 20px; /* Espaçamento entre as opções. */
             align-items: center; /* Alinha verticalmente. */
+            flex-wrap: wrap; /* Adicionado para quebrar a linha em telas muito pequenas */
         }
 
         .radio-group label {
@@ -798,6 +895,7 @@
             justify-content: center;
             gap: 15px;
             margin-top: 30px;
+            flex-wrap: wrap; /* Adicionado para quebrar a linha em telas pequenas */
         }
 
         .modal-button {
@@ -999,6 +1097,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: FAQ com Acordeão
         Esta seção apresenta perguntas frequentes com respostas que se expandem e contraem.
+        Totalmente responsivo.
         ****************************************************************************************************
     -->
     <section id="faq">
@@ -1208,6 +1307,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Contato
         Esta seção fornece informações de contato e um mapa do Google Maps.
+        Totalmente responsivo.
         ****************************************************************************************************
     -->
     <section id="contato">
@@ -1356,6 +1456,7 @@
         ****************************************************************************************************
         INÍCIO DO COMPONENTE: Rodapé
         Esta é a seção final do site, contendo informações de copyright.
+        Totalmente responsivo para se adaptar a dispositivos móveis.
         ****************************************************************************************************
     -->
     <footer id="mainFooter">
@@ -1397,16 +1498,31 @@
         }
 
         /* Estilos para os links de redes sociais */
+        .social-links {
+            display: flex; /* Usa flexbox para alinhar os links. */
+            justify-content: center; /* Centraliza os links. */
+            flex-wrap: wrap; /* Permite que os links quebrem a linha. */
+            gap: 15px; /* Espaçamento entre os links. */
+        }
+
         .social-links a {
             color: white; /* Cor do texto dos links. */
             text-decoration: none; /* Remove sublinhado. */
-            margin: 0 15px; /* Espaçamento entre os links. */
+            padding: 5px 10px; /* Adicionado padding para melhor área de toque em mobile */
             transition: color 0.3s ease; /* Transição suave para hover. */
         }
 
         /* Estilos para os links de redes sociais ao passar o mouse (hover) */
         .social-links a:hover {
             color: #A9D18E; /* Cor ao passar o mouse. */
+        }
+
+        /* Media Queries para responsividade do rodapé */
+        @media (max-width: 480px) {
+            .social-links {
+                flex-direction: column; /* Empilha os links verticalmente em telas muito pequenas. */
+                align-items: center; /* Centraliza os links empilhados. */
+            }
         }
     </style>
     <!-- Não há JavaScript para esta seção. -->

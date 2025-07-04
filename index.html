@@ -229,118 +229,130 @@
     <!-- FIM DO COMPONENTE: Cabeçalho Fixo com Menu de Navegação -->
 
 
-<!--
-****************************************************************************************************
-INÍCIO DO COMPONENTE: Banner Hero
-Esta é a primeira seção visível do site, com uma imagem de fundo e uma chamada para ação.
-Totalmente responsivo para se adaptar a diferentes tamanhos de tela.
-****************************************************************************************************
--->
-<section id="hero">
-    <!-- HTML do Banner Hero -->
-    <div class="hero-content">
-        <!-- Altere o título principal aqui -->
-        <h1>Impulsione Sua Produção com Crédito Rural e Energia Sustentável</h1>
-        <!-- Altere o subtítulo ou chamada para ação aqui -->
-        <p>Soluções completas para o agronegócio: financiamento de máquinas, consórcio agrícola e energia solar.</p>
-        <!-- Botão que abre o WhatsApp -->
-        <a 
-            class="hero-button"
-            href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20meu%20crédito%20rural%20e%20saber%20mais%20detalhes."
-            target="_blank"
-        >
-            Simule Seu Crédito Agora no WhatsApp
-        </a>
-    </div>
-</section>
+    <!--
+        ****************************************************************************************************
+        INÍCIO DO COMPONENTE: Banner Hero
+        Esta é a primeira seção visível do site, com uma imagem de fundo e uma chamada para ação.
+        Totalmente responsivo para se adaptar a diferentes tamanhos de tela.
+        ****************************************************************************************************
+    -->
+    <section id="hero">
+        <!-- HTML do Banner Hero -->
+        <div class="hero-content">
+            <!-- Altere o título principal aqui -->
+            <h1>Impulsione Sua Produção com Crédito Rural e Energia Sustentável</h1>
+            <!-- Altere o subtítulo ou chamada para ação aqui -->
+            <p>Soluções completas para o agronegócio: financiamento de máquinas, consórcio agrícola e energia solar.</p>
+            <!-- Botão de Simular que agora abre o WhatsApp diretamente -->
+            <!-- O link do WhatsApp foi atualizado conforme sua solicitação. -->
+            <a class="hero-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20meu%20crédito%20rural%20e%20saber%20mais%20detalhes." target="_blank">
+                Simule Seu Crédito Agora no WhatsApp
+            </a>
+        </div>
+    </section>
 
-<!-- CSS exclusivo deste Banner Hero -->
-<style>
-    /* Estilos para a seção Hero */
-    #hero {
-        background-image: url('https://i.imgur.com/t2upHcC.png');
-        background-size: cover;
-        background-position: center center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-        padding-top: 80px;
-        box-sizing: border-box;
-    }
-
-    .hero-content {
-        max-width: 800px;
-        padding: 20px;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-    }
-
-    .hero-content h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 3.5em;
-        margin-bottom: 20px;
-        line-height: 1.2;
-    }
-
-    .hero-content p {
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.3em;
-        margin-bottom: 30px;
-    }
-
-    /* Estilos para o botão do Hero */
-    .hero-button {
-        display: inline-block;
-        text-decoration: none;
-        background-color: #A9D18E;
-        color: #1E5631;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 8px;
-        font-size: 1.1em;
-        font-weight: 700;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .hero-button:hover {
-        background-color: #1E5631;
-        color: white;
-        transform: translateY(-3px);
-    }
-
-    @media (max-width: 768px) {
+    <!-- CSS exclusivo deste Banner Hero -->
+    <style>
+        /* Estilos para a seção Hero */
         #hero {
-            background-position: center 30%;
+            /* Imagem de fundo. O URL foi atualizado para a imagem fornecida. */
+            background-image: url('https://i.imgur.com/t2upHcC.png');
+            background-size: cover; /* Garante que a imagem cubra toda a área. */
+            background-position: center center; /* Posição padrão para desktop. Altere para 'top', 'bottom', 'left', 'right' ou porcentagens para ajustar o foco. */
+            height: 100vh; /* Ocupa 100% da altura da viewport. */
+            display: flex; /* Usa flexbox para centralizar o conteúdo. */
+            justify-content: center; /* Centraliza horizontalmente. */
+            align-items: center; /* Centraliza verticalmente. */
+            text-align: center; /* Alinha o texto ao centro. */
+            color: white; /* Cor do texto. Altere para #333 (preto) se a imagem de fundo for clara. */
+            padding-top: 80px; /* Espaçamento para não ser coberto pelo cabeçalho fixo. */
+            box-sizing: border-box; /* Inclui padding na altura total. */
         }
+
+        /* Estilos para o conteúdo dentro do Hero */
+        .hero-content {
+            max-width: 800px; /* Largura máxima do conteúdo. */
+            padding: 20px; /* Espaçamento interno. */
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto. Altere a opacidade (0.5) conforme necessário. */
+            border-radius: 10px; /* Bordas arredondadas. */
+        }
+
+        /* Estilos para o título do Hero */
         .hero-content h1 {
-            font-size: 2.5em;
+            font-family: 'Montserrat', sans-serif; /* Fonte do título. */
+            font-size: 3.5em; /* Tamanho da fonte do título. Altere para maior ou menor. */
+            margin-bottom: 20px; /* Margem inferior. */
+            line-height: 1.2; /* Altura da linha. */
         }
+
+        /* Estilos para o parágrafo do Hero */
         .hero-content p {
-            font-size: 1em;
+            font-family: 'Roboto', sans-serif; /* Fonte do parágrafo. */
+            font-size: 1.3em; /* Tamanho da fonte do parágrafo. */
+            margin-bottom: 30px; /* Margem inferior. */
         }
+
+        /* Estilos para o botão do Hero */
         .hero-button {
-            padding: 12px 25px;
-            font-size: 1em;
+            background-color: #A9D18E; /* Cor de fundo do botão. Altere para #1E5631 (verde escuro) ou outra cor. */
+            color: #1E5631; /* Cor do texto do botão. Altere para white ou outra cor. */
+            padding: 15px 30px; /* Preenchimento interno do botão. */
+            border: none; /* Remove a borda. */
+            border-radius: 8px; /* Bordas arredondadas. Altere o valor para mais ou menos arredondamento. */
+            font-size: 1.1em; /* Tamanho da fonte. */
+            font-weight: 700; /* Peso da fonte. */
+            cursor: pointer; /* Cursor de mão ao passar por cima. */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para hover. */
+            text-decoration: none; /* Remove sublinhado do link, já que agora é um <a> */
+            display: inline-block; /* Garante que o padding e a largura funcionem como um botão */
         }
-    }
 
-    @media (max-width: 480px) {
-        #hero {
-            background-position: center 20%;
+        /* Estilos para o botão do Hero ao passar o mouse (hover) */
+        .hero-button:hover {
+            background-color: #1E5631; /* Cor de fundo ao passar o mouse. */
+            color: white; /* Cor do texto ao passar o mouse. */
+            transform: translateY(-3px); /* Pequeno deslocamento para cima. */
         }
-        .hero-content h1 {
-            font-size: 1.8em;
+
+        /* Media Queries para responsividade do Hero */
+        @media (max-width: 768px) {
+            #hero {
+                /* Para tablets e telas menores, ajuste a posição do fundo. */
+                /* 'center 30%' move o centro da imagem para 30% do topo, mostrando mais da parte inferior. */
+                /* Experimente outros valores (ex: 'center top', 'center bottom', 'center 50%') para encontrar o melhor ajuste. */
+                background-position: center 30%;
+            }
+            .hero-content h1 {
+                font-size: 2.5em; /* Reduz o tamanho da fonte em telas menores. */
+            }
+
+            .hero-content p {
+                font-size: 1em; /* Reduz o tamanho da fonte em telas menores. */
+            }
+
+            .hero-button {
+                padding: 12px 25px; /* Reduz o padding do botão. */
+                font-size: 1em; /* Reduz o tamanho da fonte do botão. */
+            }
         }
-        .hero-content p {
-            font-size: 0.9em;
+
+        @media (max-width: 480px) {
+            #hero {
+                /* Para celulares, ajuste ainda mais a posição do fundo. */
+                /* 'center 20%' move o centro da imagem para 20% do topo, mostrando ainda mais da parte inferior. */
+                background-position: center 20%;
+            }
+            .hero-content h1 {
+                font-size: 1.8em; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas. */
+            }
+
+            .hero-content p {
+                font-size: 0.9em; /* Reduz ainda mais o tamanho da fonte. */
+            }
         }
-    }
-</style>
-<!-- FIM DO COMPONENTE: Banner Hero -->
+    </style>
+    <!-- Não há JavaScript complexo para esta seção, apenas o clique do botão que já está no HTML -->
+    <!-- FIM DO COMPONENTE: Banner Hero -->
 
 
     <!--
@@ -355,14 +367,8 @@ Totalmente responsivo para se adaptar a diferentes tamanhos de tela.
         <div class="container">
             <!-- Altere o título da seção aqui -->
             <h2>Sobre Nós</h2>
-            <!-- Altere o texto institucional aqui -->
-            <p>Nossa empresa é especialista em soluções financeiras inovadoras para o agronegócio, com foco em impulsionar o crescimento, a produtividade e a sustentabilidade de propriedades rurais em todas as regiões do Brasil.
-
-Com mais de 53 anos de experiência no setor, atuamos lado a lado com agricultores, pecuaristas e empreendedores rurais para viabilizar a aquisição de tratores, colheitadeiras, sistemas de irrigação, energia solar e outros equipamentos essenciais para o seu negócio.
-
-Nosso time é formado por consultores dedicados e atualizados sobre as melhores linhas de crédito, consórcios e incentivos, sempre prontos para oferecer orientações personalizadas e soluções que atendam às suas necessidades com transparência e agilidade.
-
-Ao longo de nossa trajetória, já ajudamos centenas de produtores a modernizar suas atividades, reduzir custos e aumentar a rentabilidade com financiamentos competitivos e prazos flexíveis. Seja para expandir sua frota, investir em tecnologias sustentáveis ou realizar seu projeto agrícola, conte com nosso compromisso e parceria em cada etapa.</p>
+            <!-- Texto institucional atualizado conforme sua solicitação -->
+            <p>Nossa empresa é especialista em soluções financeiras inovadoras para o agronegócio, com foco em impulsionar o crescimento, a produtividade e a sustentabilidade de propriedades rurais em todas as regiões do Brasil. Com mais de 53 anos de experiência no setor, atuamos lado a lado com agricultores, pecuaristas e empreendedores rurais para viabilizar a aquisição de tratores, colheitadeiras, sistemas de irrigação, energia solar e outros equipamentos essenciais para o seu negócio. Nosso time é formado por consultores dedicados e atualizados sobre as melhores linhas de crédito, consórcios e incentivos, sempre prontos para oferecer orientações personalizadas e soluções que atendam às suas necessidades com transparência e agilidade. Ao longo de nossa trajetória, já ajudamos centenas de produtores a modernizar suas atividades, reduzir custos e aumentar a rentabilidade com financiamentos competitivos e prazos flexíveis. Seja para expandir sua frota, investir em tecnologias sustentáveis ou realizar seu projeto agrícola, conte com nosso compromisso e parceria em cada etapa.</p>
 
             <div class="indicators">
                 <!-- Indicador 1 -->
@@ -486,44 +492,37 @@ Ao longo de nossa trajetória, já ajudamos centenas de produtores a modernizar 
                 <div class="card">
                     <!-- Ícone ou imagem para o card. Você pode usar um emoji ou SVG simples. -->
                     <span class="card-icon">🚜</span>
-                    <!-- Altere o título do card -->
+                    <!-- Título do card atualizado -->
                     <h3>Financiamento de Máquinas</h3>
-                    <!-- Altere a descrição do card -->
-                    <p>Adquira tratores, colheitadeiras e pulverizadores das marcas mais desejadas do agronegócio. Financiamos John Deere, Case IH, New Holland, Massey Ferguson e muito mais, com taxas especiais e prazos flexíveis.
-
-Modernize sua frota com modelos como a Colheitadeira Axial-Flow, Trator Série 7J ou Plantadeira Momentum e aumente sua produtividade agora mesmo.</p>
-                    <!-- Botão "Simular" que rola para a seção de simulação -->
-                   <a class="hero-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20meu%20crédito%20rural%20e%20saber%20mais%20detalhes." target="_blank">
-            Simule Seu Crédito Agora no WhatsApp
-        </a>
+                    <!-- Descrição do card atualizada -->
+                    <p>Adquira tratores, colheitadeiras e pulverizadores das marcas mais desejadas do agronegócio. Financiamos John Deere, Case IH, New Holland, Massey Ferguson e muito mais, com taxas especiais e prazos flexíveis. Modernize sua frota com modelos como a Colheitadeira Axial-Flow, Trator Série 7J ou Plantadeira Momentum e aumente sua produtividade agora mesmo.</p>
+                    <!-- Botão "Simular" agora é um link para o WhatsApp -->
+                    <a class="card-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20Financiamento%20de%20Máquinas%20e%20saber%20mais%20detalhes." target="_blank">Simular</a>
+                </div>
 
                 <!-- Card 2: Consórcio Agro -->
                 <div class="card">
                     <!-- Ícone ou imagem para o card. -->
                     <span class="card-icon">🌱</span>
-                    <!-- Altere o título do card -->
+                    <!-- Título do card atualizado -->
                     <h3>Consórcio Agrícola</h3>
-                    <!-- Altere a descrição do card -->
-                    <p>Planeje a compra de tratores, implementos, sistemas de irrigação e até energia solar para sua propriedade, parcelas acessíveis.
-Ideal para investimentos agrícolas de médio e longo prazo com condições exclusivas. Consulte taxas e aproveite oportunidades especiais.
+                    <!-- Descrição do card atualizada -->
+                    <p>Planeje a compra de tratores, implementos, sistemas de irrigação e até energia solar para sua propriedade, com parcelas acessíveis. Ideal para investimentos agrícolas de médio e longo prazo com condições exclusivas. Consulte taxas e aproveite oportunidades especiais.</p>
+                    <!-- Botão "Simular" agora é um link para o WhatsApp -->
+                    <a class="card-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20Consórcio%20Agrícola%20e%20saber%20mais%20detalhes." target="_blank">Simular</a>
+                </div>
 
-</p>
-                    <!-- Botão "Simular" que rola para a seção de simulação -->
-                 <a class="hero-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20meu%20crédito%20rural%20e%20saber%20mais%20detalhes." target="_blank">
-            Simule Seu Crédito Agora no WhatsApp
-        </a>
                 <!-- Card 3: Energia Solar e Irrigação -->
                 <div class="card">
                     <!-- Ícone ou imagem para o card. -->
                     <span class="card-icon">☀️</span>
-                    <!-- Altere o título do card -->
+                    <!-- Título do card atualizado -->
                     <h3>Energia Solar e Irrigação</h3>
-                    <!-- Altere a descrição do card -->
+                    <!-- Descrição do card atualizada -->
                     <p>Invista em sustentabilidade e aumente sua produtividade. Financie sistemas de energia solar e irrigação automatizada que reduzem custos, valorizam sua propriedade e garantem mais eficiência no campo.</p>
-                    <!-- Botão "Simular" que rola para a seção de simulação -->
-                  <a class="hero-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20meu%20crédito%20rural%20e%20saber%20mais%20detalhes." target="_blank">
-            Simule Seu Crédito Agora no WhatsApp
-        </a>
+                    <!-- Botão "Simular" agora é um link para o WhatsApp -->
+                    <a class="card-button" href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20Energia%20Solar%20e%20Irrigação%20e%20saber%20mais%20detalhes." target="_blank">Simular</a>
+                </div>
             </div>
         </div>
     </section>
@@ -616,6 +615,8 @@ Ideal para investimentos agrícolas de médio e longo prazo com condições excl
             font-weight: 700; /* Peso da fonte. */
             cursor: pointer; /* Cursor de mão. */
             transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para hover. */
+            text-decoration: none; /* Remove sublinhado do link */
+            display: inline-block; /* Garante que o link se comporte como um botão */
         }
 
         /* Estilos para o botão do card ao passar o mouse (hover) */
@@ -713,6 +714,20 @@ Ideal para investimentos agrícolas de médio e longo prazo com condições excl
         </div>
     </section>
 
+    <!-- Modal de Confirmação (HTML) -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Confirme Seus Dados</h3>
+            <div id="modalData">
+                <!-- Os dados do formulário serão inseridos aqui via JavaScript -->
+            </div>
+            <div class="modal-actions">
+                <button id="confirmSend" class="modal-button confirm-button">Confirmar e Enviar WhatsApp</button>
+                <button id="cancelSend" class="modal-button cancel-button">Cancelar</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Mensagem de feedback (HTML) -->
     <div id="feedbackMessage" class="feedback-message"></div>

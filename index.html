@@ -229,125 +229,118 @@
     <!-- FIM DO COMPONENTE: Cabeçalho Fixo com Menu de Navegação -->
 
 
-    <!--
-        ****************************************************************************************************
-        INÍCIO DO COMPONENTE: Banner Hero
-        Esta é a primeira seção visível do site, com uma imagem de fundo e uma chamada para ação.
-        Totalmente responsivo para se adaptar a diferentes tamanhos de tela.
-        ****************************************************************************************************
-    -->
-    <section id="hero">
-        <!-- HTML do Banner Hero -->
-        <div class="hero-content">
-            <!-- Altere o título principal aqui -->
-            <h1>Impulsione Sua Produção com Crédito Rural e Energia Sustentável</h1>
-            <!-- Altere o subtítulo ou chamada para ação aqui -->
-            <p>Soluções completas para o agronegócio: financiamento de máquinas, consórcio agrícola e energia solar.</p>
-            <!-- Botão de Simular que rola para a seção de simulação -->
-            <button class="hero-button" onclick="document.getElementById('simulacao').scrollIntoView({ behavior: 'smooth' })">Simule Seu Crédito Agora</button>
-        </div>
-    </section>
+<!--
+****************************************************************************************************
+INÍCIO DO COMPONENTE: Banner Hero
+Esta é a primeira seção visível do site, com uma imagem de fundo e uma chamada para ação.
+Totalmente responsivo para se adaptar a diferentes tamanhos de tela.
+****************************************************************************************************
+-->
+<section id="hero">
+    <!-- HTML do Banner Hero -->
+    <div class="hero-content">
+        <!-- Altere o título principal aqui -->
+        <h1>Impulsione Sua Produção com Crédito Rural e Energia Sustentável</h1>
+        <!-- Altere o subtítulo ou chamada para ação aqui -->
+        <p>Soluções completas para o agronegócio: financiamento de máquinas, consórcio agrícola e energia solar.</p>
+        <!-- Botão que abre o WhatsApp -->
+        <a 
+            class="hero-button"
+            href="https://wa.me/5511969522814?text=Olá,%20gostaria%20de%20simular%20meu%20crédito%20rural%20e%20saber%20mais%20detalhes."
+            target="_blank"
+        >
+            Simule Seu Crédito Agora no WhatsApp
+        </a>
+    </div>
+</section>
 
-    <!-- CSS exclusivo deste Banner Hero -->
-    <style>
-        /* Estilos para a seção Hero */
+<!-- CSS exclusivo deste Banner Hero -->
+<style>
+    /* Estilos para a seção Hero */
+    #hero {
+        background-image: url('https://i.imgur.com/t2upHcC.png');
+        background-size: cover;
+        background-position: center center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 80px;
+        box-sizing: border-box;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+
+    .hero-content h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+
+    /* Estilos para o botão do Hero */
+    .hero-button {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #A9D18E;
+        color: #1E5631;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero-button:hover {
+        background-color: #1E5631;
+        color: white;
+        transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
         #hero {
-            /* Imagem de fundo. O URL foi atualizado para a imagem fornecida. */
-            background-image: url('https://i.imgur.com/t2upHcC.png');
-            background-size: cover; /* Garante que a imagem cubra toda a área. */
-            background-position: center center; /* Posição padrão para desktop. Altere para 'top', 'bottom', 'left', 'right' ou porcentagens para ajustar o foco. */
-            height: 100vh; /* Ocupa 100% da altura da viewport. */
-            display: flex; /* Usa flexbox para centralizar o conteúdo. */
-            justify-content: center; /* Centraliza horizontalmente. */
-            align-items: center; /* Centraliza verticalmente. */
-            text-align: center; /* Alinha o texto ao centro. */
-            color: white; /* Cor do texto. Altere para #333 (preto) se a imagem de fundo for clara. */
-            padding-top: 80px; /* Espaçamento para não ser coberto pelo cabeçalho fixo. */
-            box-sizing: border-box; /* Inclui padding na altura total. */
+            background-position: center 30%;
         }
-
-        /* Estilos para o conteúdo dentro do Hero */
-        .hero-content {
-            max-width: 800px; /* Largura máxima do conteúdo. */
-            padding: 20px; /* Espaçamento interno. */
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto. Altere a opacidade (0.5) conforme necessário. */
-            border-radius: 10px; /* Bordas arredondadas. */
-        }
-
-        /* Estilos para o título do Hero */
         .hero-content h1 {
-            font-family: 'Montserrat', sans-serif; /* Fonte do título. */
-            font-size: 3.5em; /* Tamanho da fonte do título. Altere para maior ou menor. */
-            margin-bottom: 20px; /* Margem inferior. */
-            line-height: 1.2; /* Altura da linha. */
+            font-size: 2.5em;
         }
-
-        /* Estilos para o parágrafo do Hero */
         .hero-content p {
-            font-family: 'Roboto', sans-serif; /* Fonte do parágrafo. */
-            font-size: 1.3em; /* Tamanho da fonte do parágrafo. */
-            margin-bottom: 30px; /* Margem inferior. */
+            font-size: 1em;
         }
-
-        /* Estilos para o botão do Hero */
         .hero-button {
-            background-color: #A9D18E; /* Cor de fundo do botão. Altere para #1E5631 (verde escuro) ou outra cor. */
-            color: #1E5631; /* Cor do texto do botão. Altere para white ou outra cor. */
-            padding: 15px 30px; /* Preenchimento interno do botão. */
-            border: none; /* Remove a borda. */
-            border-radius: 8px; /* Bordas arredondadas. Altere o valor para mais ou menos arredondamento. */
-            font-size: 1.1em; /* Tamanho da fonte. */
-            font-weight: 700; /* Peso da fonte. */
-            cursor: pointer; /* Cursor de mão ao passar por cima. */
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave para hover. */
+            padding: 12px 25px;
+            font-size: 1em;
         }
+    }
 
-        /* Estilos para o botão do Hero ao passar o mouse (hover) */
-        .hero-button:hover {
-            background-color: #1E5631; /* Cor de fundo ao passar o mouse. */
-            color: white; /* Cor do texto ao passar o mouse. */
-            transform: translateY(-3px); /* Pequeno deslocamento para cima. */
+    @media (max-width: 480px) {
+        #hero {
+            background-position: center 20%;
         }
-
-        /* Media Queries para responsividade do Hero */
-        @media (max-width: 768px) {
-            #hero {
-                /* Para tablets e telas menores, ajuste a posição do fundo. */
-                /* 'center 30%' move o centro da imagem para 30% do topo, mostrando mais da parte inferior. */
-                /* Experimente outros valores (ex: 'center top', 'center bottom', 'center 50%') para encontrar o melhor ajuste. */
-                background-position: center 30%;
-            }
-            .hero-content h1 {
-                font-size: 2.5em; /* Reduz o tamanho da fonte em telas menores. */
-            }
-
-            .hero-content p {
-                font-size: 1em; /* Reduz o tamanho da fonte em telas menores. */
-            }
-
-            .hero-button {
-                padding: 12px 25px; /* Reduz o padding do botão. */
-                font-size: 1em; /* Reduz o tamanho da fonte do botão. */
-            }
+        .hero-content h1 {
+            font-size: 1.8em;
         }
-
-        @media (max-width: 480px) {
-            #hero {
-                /* Para celulares, ajuste ainda mais a posição do fundo. */
-                /* 'center 20%' move o centro da imagem para 20% do topo, mostrando ainda mais da parte inferior. */
-                background-position: center 20%;
-            }
-            .hero-content h1 {
-                font-size: 1.8em; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas. */
-            }
-
-            .hero-content p {
-                font-size: 0.9em; /* Reduz ainda mais o tamanho da fonte. */
-            }
+        .hero-content p {
+            font-size: 0.9em;
         }
-    </style>
-    <!-- Não há JavaScript complexo para esta seção, apenas o clique do botão que já está no HTML -->
-    <!-- FIM DO COMPONENTE: Banner Hero -->
+    }
+</style>
+<!-- FIM DO COMPONENTE: Banner Hero -->
 
 
     <!--

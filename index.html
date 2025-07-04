@@ -255,7 +255,7 @@
             /* Imagem de fundo. O URL foi atualizado para a imagem fornecida. */
             background-image: url('https://i.imgur.com/DecS1Lb.png');
             background-size: cover; /* Garante que a imagem cubra toda a área. */
-            background-position: center; /* Centraliza a imagem. */
+            background-position: center center; /* Posição padrão para desktop. Altere para 'top', 'bottom', 'left', 'right' ou porcentagens para ajustar o foco. */
             height: 100vh; /* Ocupa 100% da altura da viewport. */
             display: flex; /* Usa flexbox para centralizar o conteúdo. */
             justify-content: center; /* Centraliza horizontalmente. */
@@ -311,6 +311,12 @@
 
         /* Media Queries para responsividade do Hero */
         @media (max-width: 768px) {
+            #hero {
+                /* Para tablets e telas menores, ajuste a posição do fundo. */
+                /* 'center 30%' move o centro da imagem para 30% do topo, mostrando mais da parte inferior. */
+                /* Experimente outros valores (ex: 'center top', 'center bottom', 'center 50%') para encontrar o melhor ajuste. */
+                background-position: center 30%;
+            }
             .hero-content h1 {
                 font-size: 2.5em; /* Reduz o tamanho da fonte em telas menores. */
             }
@@ -326,6 +332,11 @@
         }
 
         @media (max-width: 480px) {
+            #hero {
+                /* Para celulares, ajuste ainda mais a posição do fundo. */
+                /* 'center 20%' move o centro da imagem para 20% do topo, mostrando ainda mais da parte inferior. */
+                background-position: center 20%;
+            }
             .hero-content h1 {
                 font-size: 1.8em; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas. */
             }
